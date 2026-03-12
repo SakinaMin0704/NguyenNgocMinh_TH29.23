@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title> Nguyễn Ngọc Minh </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header" >                 
+      <div class="menu">
+    <div class="menu-left">
+        <img src="img/logo.png" class="logo">
+        <a href="index.html">Trang chủ</a>
+        <a href="Muaacc.html">Mua acc</a>
+        <a href="Muatool.html">Mua tool</a>
+        <a href="caythue.html">Cày thuê</a>
+        <a href="naptien.html">Nạp tiền</a>
+        <a href="https://www.facebook.com/otori.kushiro" target="_blank">Liên hệ - Hỗ trợ</a>
+    </div>
+
+    <div class="menu-right">
+        <div class="auth-buttons">
+            <a href="dangnhap.html" class="btn-login"><i class="fas fa-user"></i> Đăng nhập</a>
+            <span class="separator">|</span>
+            <a href="dangnhap.html?tab=register" class="btn-register">Đăng ký</a>
+        </div>
+    </div>
+</div>
+    <div id="header">
+        </div>
+
+    <div id="main-content" class="auth-page">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="switchTab('login')">Đăng Nhập</button>
+                <button class="tab-btn" onclick="switchTab('register')">Đăng Ký</button>
+            </div>
+
+            <div id="login-form" class="auth-box">
+                <h3 class="auth-title">Chào mừng trở lại!</h3>
+                <form>
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Tên tài khoản" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Mật khẩu" required>
+                    </div>
+                    <div class="auth-options">
+                        <label><input type="checkbox"> Ghi nhớ</label>
+                        <a href="#">Quên mật khẩu?</a>
+                    </div>
+                    <button type="submit" class="btn-auth">ĐĂNG NHẬP NGAY</button>
+                </form>
+            </div>
+
+            <div id="register-form" class="auth-box" style="display: none;">
+                <h3 class="auth-title">Tạo tài khoản mới</h3>
+                <form>
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Tên tài khoản" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email của bạn" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Mật khẩu" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-check-double"></i>
+                        <input type="password" placeholder="Nhập lại mật khẩu" required>
+                    </div>
+                    <button type="submit" class="btn-auth">ĐĂNG KÝ TÀI KHOẢN</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
