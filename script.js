@@ -130,3 +130,97 @@ function startLiveshow()
     bannerElement.src = sliderImages[currentIndex];
 }
 setInterval(startLiveshow, 3000);
+function showMethod(method) {
+    // Ẩn/Hiện khung
+    document.getElementById('method-card').style.display = method === 'card' ? 'block' : 'none';
+    document.getElementById('method-bank').style.display = method === 'bank' ? 'block' : 'none';
+    
+    // Đổi màu nút
+    const btns = document.querySelectorAll('.method-btn');
+    btns[0].classList.toggle('active', method === 'card');
+    btns[1].classList.toggle('active', method === 'bank');
+}
+
+function copyContent() {
+    const text = document.getElementById("copyText").innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        alert("Đã copy nội dung chuyển khoản!");
+    });
+}
+function updateBankQR() {
+    
+    const amount = document.getElementById('bank-amount').value;
+    const qrImg = document.getElementById('qr-bank-img');
+    const displayAmount = document.getElementById('display-amount');
+    
+    // 1. Lấy nội dung chuyển khoản từ thẻ b (Ví dụ: NAP SAKINA 123)
+    const rawDescription = document.getElementById("copyText").innerText;
+    
+    // 2. Mã hóa nội dung để đưa vào URL (chuyển khoảng trắng thành %20)
+    const encodedDescription = encodeURIComponent(rawDescription);
+
+    const bankID = "970422"; // MB Bank
+    const accountNo = "6610388694368";
+    const template = "compact2";
+
+    // 3. Tạo URL mới với nội dung đã được mã hóa
+    const newQRUrl = `https://api.vietqr.io/image/${bankID}-${accountNo}-${template}.jpg?amount=${amount}&addInfo=${encodedDescription}`;
+    
+    qrImg.src = newQRUrl;
+    displayAmount.innerText = parseInt(amount).toLocaleString('vi-VN') + "đ";
+    // Thêm vào trong hàm updateBankQR() ở trên
+qrImg.style.opacity = "0.01"; 
+qrImg.onload = function() {
+    qrImg.style.opacity = "1";
+};
+}
+// Tự động tạo mã nội dung nạp tiền khi load trang
+window.onload = function() {
+    const randomID = Math.floor(1000 + Math.random() * 9000); // Tạo số ngẫu nhiên 4 chữ số
+    const copyTextField = document.getElementById("copyText");
+    if(copyTextField) {
+        copyTextField.innerText = "NAP SAKINA " + randomID;
+    }
+    // Cập nhật QR lần đầu luôn
+    if(document.getElementById('bank-amount')) {
+        updateBankQR();
+    }
+};
+// Thêm đoạn này vào cuối file script.js của bạn
+window.addEventListener('DOMContentLoaded', (event) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const tab = urlParams.get('tab');
+    if (tab === 'register') {
+        switchTab('register'); // Hàm switchTab bạn đã tạo ở bước trước
+    }
+});
+// Hàm chuyển đổi Tab (Đã có, bạn kiểm tra xem khớp chưa)
+function switchTab(type) {
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+    const btns = document.querySelectorAll('.method-btn');
+
+    if (type === 'login') {
+        if(loginForm) loginForm.style.display = 'block';
+        if(registerForm) registerForm.style.display = 'none';
+        btns[0].classList.add('active');
+        btns[1].classList.remove('active');
+    } else {
+        if(loginForm) loginForm.style.display = 'none';
+        if(registerForm) registerForm.style.display = 'block';
+        btns[0].classList.remove('active');
+        btns[1].classList.add('active');
+    }
+}
+
+// --- ĐOẠN CODE SỬA LỖI KHÔNG ẤN ĐƯỢC ĐĂNG KÝ ---
+window.addEventListener('DOMContentLoaded', () => {
+    // Lấy thông tin từ link web (URL)
+    const urlParams = new URLSearchParams(window.location.search);
+    const tab = urlParams.get('tab');
+
+    // Nếu trên link có chữ ?tab=register thì tự gọi hàm hiện form Đăng ký
+    if (tab === 'register') {
+        switchTab('register');
+    }
+});

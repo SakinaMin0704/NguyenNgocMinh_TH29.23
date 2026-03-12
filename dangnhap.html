@@ -18,12 +18,6 @@
         <a href="https://www.facebook.com/otori.kushiro" target="_blank">Liên hệ - Hỗ trợ</a>
     </div>
 
-    <div class="menu-right">
-        <div class="auth-buttons">
-            <a href="dangnhap.html" class="btn-login"><i class="fas fa-user"></i> Đăng nhập</a>
-            <span class="separator">|</span>
-            <a href="dangnhap.html?tab=register" class="btn-register">Đăng ký</a>
-        </div>
     </div>
 </div>
     <div id="header">
@@ -31,55 +25,53 @@
 
     <div id="main-content" class="auth-page">
         <div class="auth-container">
-            <div class="auth-tabs">
-                <button class="tab-btn active" onclick="switchTab('login')">Đăng Nhập</button>
-                <button class="tab-btn" onclick="switchTab('register')">Đăng Ký</button>
+            <h2 class="main-title">THÀNH VIÊN SAKINA</h2>
+
+            <div class="method-selector">
+                <button class="method-btn active" onclick="switchTab('login')">
+                    <i class="fas fa-sign-in-alt"></i> Đăng Nhập
+                </button>
+                <button class="method-btn" onclick="switchTab('register')">
+                    <i class="fas fa-user-plus"></i> Đăng Ký
+                </button>
             </div>
 
-            <div id="login-form" class="auth-box">
-                <h3 class="auth-title">Chào mừng trở lại!</h3>
+            <div id="login-form" class="recharge-card">
+                <div class="card-header">Chào mừng bạn trở lại!</div>
                 <form>
-                    <div class="form-group">
-                        <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Tên tài khoản" required>
-                    </div>
-                    <div class="form-group">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Mật khẩu" required>
-                    </div>
-                    <div class="auth-options">
+                    <input type="text" class="custom-input" placeholder="Tên đăng nhập" required>
+                    <input type="password" class="custom-input" placeholder="Mật khẩu" required>
+                    
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 13px;">
                         <label><input type="checkbox"> Ghi nhớ</label>
-                        <a href="#">Quên mật khẩu?</a>
+                        <a href="#" style="color: #ff4d4d; text-decoration: none;">Quên mật khẩu?</a>
                     </div>
-                    <button type="submit" class="btn-auth">ĐĂNG NHẬP NGAY</button>
+
+                    <button type="submit" class="btn-primary">ĐĂNG NHẬP NGAY</button>
                 </form>
             </div>
 
-            <div id="register-form" class="auth-box" style="display: none;">
-                <h3 class="auth-title">Tạo tài khoản mới</h3>
+            <div id="register-form" class="recharge-card" style="display: none;">
+                <div class="card-header">Tạo tài khoản mới</div>
                 <form>
-                    <div class="form-group">
-                        <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Tên tài khoản" required>
-                    </div>
-                    <div class="form-group">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email của bạn" required>
-                    </div>
-                    <div class="form-group">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Mật khẩu" required>
-                    </div>
-                    <div class="form-group">
-                        <i class="fas fa-check-double"></i>
-                        <input type="password" placeholder="Nhập lại mật khẩu" required>
-                    </div>
-                    <button type="submit" class="btn-auth">ĐĂNG KÝ TÀI KHOẢN</button>
+                    <input type="text" class="custom-input" placeholder="Tên tài khoản" required>
+                    <input type="email" class="custom-input" placeholder="Email (ví dụ: abc@gmail.com)" required>
+                    <input type="password" class="custom-input" placeholder="Mật khẩu" required>
+                    <input type="password" class="custom-input" placeholder="Xác nhận mật khẩu" required>
+                    
+                    <button type="submit" class="btn-primary" style="background: #ff4d4d;">ĐĂNG KÝ TÀI KHOẢN</button>
                 </form>
             </div>
         </div>
     </div>
-
+<div class="fixed-widgets">
+      <a href="https://www.facebook.com/otori.kushiro" target="_blank" class="widget-chat">
+            <img src="img/logomess.jpg">
+        </a>
+        <button onclick="scrollToTop()" class="widget-top">
+            <i class="arrow-up"></i>
+        </button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nạp Tiền - Sakina Min</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="header">
+       <div class="menu">
+    <div class="menu-left">
+        <img src="img/logo.png" class="logo">
+        <a href="index.html">Trang chủ</a>
+        <a href="Muaacc.html">Mua acc</a>
+        <a href="Muatool.html">Mua tool</a>
+        <a href="caythue.html">Cày thuê</a>
+        <a href="naptien.html">Nạp tiền</a>
+        <a href="https://www.facebook.com/otori.kushiro" target="_blank">Liên hệ - Hỗ trợ</a>
+    </div>
+
+    <div class="menu-right">
+        <div class="auth-buttons">
+    <a href="dangnhap.html" class="btn-login"><i class="fas fa-user"></i> Đăng nhập</a>
+    <span class="separator">|</span>
+    <a href="dangnhap.html?tab=register" class="btn-register">Đăng ký</a>
+</div>
+    </div>
+</div>
+    <div id="main-content">
+        <div class="recharge-container">
+            <h2 class="main-title">HỆ THỐNG THANH TOÁN</h2>
+            
+            <div class="method-selector">
+                <button class="method-btn active" onclick="showMethod('card')">
+                    <i class="fas fa-sd-card"></i> Nạp Thẻ Cào
+                </button>
+                <button class="method-btn" onclick="showMethod('bank')">
+                    <i class="fas fa-university"></i> Ngân Hàng / QR
+                </button>
+            </div>
+
+            <div id="method-card" class="recharge-card">
+                <div class="card-header">Nạp Thẻ Tự Động (Chiết khấu 20%)</div>
+                <form id="card-form">
+                    <div class="form-group">
+                        <label>Nhà mạng</label>
+                        <select id="telco" class="custom-input">
+                            <option value="VIETTEL">Viettel</option>
+                            <option value="VINAPHONE">Vinaphone</option>
+                            <option value="MOBIFONE">MobiFone</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Mệnh giá</label>
+                        <select id="amount" class="custom-input">
+                            <option value="10000">10,000đ</option>
+                            <option value="10000">20,000đ</option>
+                            <option value="50000">50,000đ</option>
+                            <option value="100000" selected>100,000đ</option>
+                            <option value="500000">200,000đ</option>
+                            <option value="500000">500,000đ</option>
+                        </select>
+                    </div>
+                    <input type="text" class="custom-input" placeholder="Số Seri thẻ" required>
+                    <input type="text" class="custom-input" placeholder="Mã thẻ nạp" required>
+                    <button type="submit" class="btn-primary">TIẾN HÀNH NẠP THẺ</button>
+                </form>
+            </div>
+<div id="method-bank" class="recharge-card" style="display: none;">
+    <div class="card-header">Chuyển Khoản Qua QR Code</div>
+    <div class="bank-layout">
+        
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label style="display:block; margin-bottom: 8px; font-weight: 600;">Chọn số tiền muốn nạp:</label>
+            <select id="bank-amount" class="custom-input" onchange="updateBankQR()">
+                <option value="10000">10,000đ</option>
+                <option value="20000">20,000đ</option>
+                <option value="50000">50,000đ</option>
+                <option value="100000" selected>100,000đ</option>
+                <option value="200000">200,000đ</option>
+                <option value="500000">500,000đ</option>
+                <option value="1000000">1,000,000đ</option>
+            </select>
+        </div>
+
+        <div class="qr-box">
+            <img id="qr-bank-img" src="https://api.vietqr.io/image/970422-6610388694368-compact2.jpg?amount=100000&addInfo=NAP%20TIEN%20SAKINA" class="img-qr">
+            <p style="margin-top:10px;">Quét mã để nạp nhanh số tiền: <strong id="display-amount">100,000đ</strong></p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-item"><span>Ngân hàng:</span> <strong>MB BANK</strong></div>
+            <div class="info-item"><span>Số TK:</span> <strong>6610388694368</strong></div>
+            <div class="info-item"><span>Chủ TK:</span> <strong>NGUYEN NGOC MINH</strong></div>
+            <div class="copy-field">
+                <b id="copyText">NAP SAKINA 123</b>
+                <button onclick="copyContent()"><i class="fas fa-copy"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fixed-widgets">
+      <a href="https://www.facebook.com/otori.kushiro" target="_blank" class="widget-chat">
+            <img src="img/logomess.jpg">
+        </a>
+        <button onclick="scrollToTop()" class="widget-top">
+            <i class="arrow-up"></i>
+        </button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
