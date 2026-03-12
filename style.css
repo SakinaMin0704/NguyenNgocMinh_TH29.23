@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-/* --- GIAO DIỆN CHUNG --- */
 body {
     margin: auto;
     background-color: rgb(255, 255, 255);
@@ -14,21 +13,21 @@ body {
 
 #header img { max-width: 100%; }
 
-/* --- MENU NAVIGATION (ĐÃ SỬA LỖI LỆCH) --- */
+
 .menu {
     width: 100%;
     height: 70px;
     background: #ffffff;
-    display: flex;             /* Sử dụng Flexbox */
-    align-items: center;       /* Căn giữa dọc */
-    justify-content: space-between; /* Đẩy khối trái và phải về 2 phía */
+    display: flex;         
+    align-items: center;    
+    justify-content: space-between; 
     padding: 0 5%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    box-sizing: border-box;    /* Ngăn tràn lề */
+    box-sizing: border-box;
 }
 
 .menu-left {
@@ -40,7 +39,7 @@ body {
 .menu-right {
     display: flex;
     align-items: center;
-    margin-left: auto;         /* Đẩy cụm này sang sát lề phải */
+    margin-left: auto;
 }
 
 .auth-buttons {
@@ -70,7 +69,7 @@ body {
 
 .btn-register {
     color: #fff !important;
-    background: #ff4d4d;      /* Màu đỏ chủ đạo */
+    background: #ff4d4d;   
     padding: 8px 18px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(255, 77, 77, 0.2);
@@ -96,7 +95,7 @@ body {
     border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
-    white-space: nowrap;      /* Không cho chữ nhảy dòng */
+    white-space: nowrap;     
 }
 
 .menu a:hover {
@@ -127,7 +126,7 @@ body {
     margin-right: 20px;
 }
 
-/* --- HIỂN THỊ SẢN PHẨM (GRID) --- */
+
 .rows {
     display: grid;
     grid-template-columns: repeat(5, 1fr); 
@@ -207,7 +206,7 @@ body {
     margin: 40px 0;
 }
 
-/* --- MARQUEE (CHỮ CHẠY) --- */
+
 .marquee-container {
     width: 100%;
     overflow: hidden;
@@ -229,7 +228,7 @@ body {
     100% { transform: translate(-100%, 0); }
 }
 
-/* --- FOOTER --- */
+
 .footer {
     background-color: #f1f1f1;
     padding: 30px;
@@ -242,7 +241,7 @@ body {
 .footer a { text-decoration: none; color: #ce38ec; font-weight: bold; transition: 0.3s; }
 .footer a:hover { color: #000; text-decoration: underline; }
 
-/* --- SLIDER LOGIC --- */
+
 .slider-wrapper {
     display: flex;
     align-items: center;
@@ -302,7 +301,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- SALE & COUNTDOWN --- */
+
 #sale-container { text-align: center; margin-top: 20px; }
 
 #countdown-timer {
@@ -331,7 +330,7 @@ body {
     50% { color: #ffcc00; text-shadow: 0 0 15px rgba(255, 204, 0, 0.8); }
 }
 
-/* --- HOA ANH ĐÀO RƠI --- */
+
 .sakura {
     position: fixed;
     top: -50px;
@@ -347,7 +346,7 @@ body {
     100% { top: 100vh; transform: translateX(100px) rotate(360deg); opacity: 0; }
 }
 
-/* --- MODAL THÔNG BÁO --- */
+
 .modal {
     display: flex; 
     position: fixed;
@@ -385,7 +384,7 @@ body {
 
 @keyframes zoomIn { from { transform: scale(0); } to { transform: scale(1); } }
 
-/* --- FIXED WIDGETS --- */
+
 .fixed-widgets {
     position: fixed;
     bottom: 20px; right: 20px;
@@ -409,7 +408,7 @@ body {
     display: inline-block; padding: 5px; transform: rotate(-135deg);
 }
 
-/* --- HIỆU ỨNG CHỮ LẤP LÁNH --- */
+
 .sparkle-text {
     font-size: 20px; font-weight: 800; letter-spacing: 2px;
     background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
@@ -424,7 +423,6 @@ body {
     100% { background-position: 100% 50%; }
 }
 
-/* --- PHẦN NẠP TIỀN SAKINA MIN --- */
 #main-content {
     padding-top: 120px;
     background: #fdfdfd;
@@ -440,7 +438,7 @@ body {
 }
 
 .recharge-container {
-    max-width: 500px; /* Giảm từ 600px/700px xuống 500px để nó gọn giữa màn hình */
+    max-width: 500px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -508,7 +506,7 @@ body {
 }
 .img-qr {
     width: 100%;
-    max-width: 250px; /* Giảm xuống 250px để cân đối với khung 500px bên trên */
+    max-width: 250px;
     height: auto;
     border-radius: 10px;
     border: 3px solid #f9f9f9;
@@ -516,7 +514,7 @@ body {
 
 .qr-box {
     text-align: center;
-    padding: 5px; /* Thu hẹp padding lại */
+    padding: 5px;
 }
 
 .info-item {
@@ -541,32 +539,32 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 600px) {
     .separator, .btn-register { display: none; }
     .menu-left a { font-size: 12px; padding: 5px; }
 }
-/* --- TRANG TRÍ RIÊNG CHO TRANG ĐĂNG NHẬP --- */
+
 .auth-page {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding-top: 50px; /* Đẩy xuống để không vướng menu */
+    padding-top: 50px;
 }
 
 .auth-container {
     width: 100%;
-    max-width: 450px; /* Giới hạn độ rộng để form trông gọn gàng */
+    max-width: 450px;
     margin: 0 auto;
 }
 
-/* Hiệu ứng mượt mà khi chuyển tab */
+
 #login-form, #register-form {
     animation: slideUp 0.4s ease-out;
 }
 
-/* Làm cho các ô input trông xịn hơn khi click vào */
+
 .custom-input:focus {
     border-color: #ff4d4d;
     outline: none;
@@ -581,7 +579,7 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     transition: 0.3s;
 }
-/* Thêm vào style.css */
+
 #login-form, #register-form {
     transition: opacity 0.3s ease-in-out;
     animation: fadeIn 0.5s;
